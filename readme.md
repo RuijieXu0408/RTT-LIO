@@ -12,7 +12,7 @@ RTT-LIO is a novel tightly-coupled factor graph optimization framework that inte
 
 RTT-LIO implements a comprehensive multi-stage processing pipeline:
 
-![flowchart](C:\Users\99572\OneDrive\Paper\PLANS\To GitHub\flowchart.png)
+![flowchart]([C:\Users\99572\OneDrive\Paper\PLANS\To GitHub\flowchart.png](https://github.com/RuijieXu0408/RTT-LIO/blob/main/fig/flowchart.png))
 
 1. **Frontend Processing**:
    - **Keyframe Selection and Initialization**: Selects informative LiDAR frames for processing and establishes system initialization parameters
