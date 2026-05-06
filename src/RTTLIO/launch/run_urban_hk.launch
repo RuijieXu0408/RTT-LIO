@@ -1,0 +1,22 @@
+<launch>
+
+    <!--- Sim Time -->
+    <param name="/use_sim_time" value="false" />
+
+    <!--- Run Rviz-->
+    <node pkg="rviz" type="rviz" name="rviz_RTTLIO" args="-d $(find RTTLIO)/config/test.rviz" />
+
+    <!-- Parameters -->
+    <rosparam file = "$(find RTTLIO)/config/config_urban_hk.yaml"/>
+
+    <node pkg="tf" type="static_transform_publisher" name="RTTLIO" args="0 0 0 0 0 0 base_link RTTLIO 50"/>
+
+    <!--- RTTLIO -->
+    <node pkg="RTTLIO" type="Preprocessing" name="Preprocessing" output="screen"/>
+    <node pkg="RTTLIO" type="LidarOdometry" name="LidarOdometry" output="screen"/>
+    <node pkg="RTTLIO" type="Estimator" name="Estimator" output="screen">
+    <param name="result_path" type="string" value="$(find RTTLIO)/../result/"/>
+    </node>
+    <param name="sol_folder" type="string" value="$(find RTTLIO)/../WiFiRTT_Dataset/20251021.csv" />
+
+</launch>

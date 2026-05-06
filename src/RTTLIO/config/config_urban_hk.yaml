@@ -1,0 +1,68 @@
+common:
+  frame_id: "RTTLIO"
+  data_set: "HK"
+
+IMU:
+  imu_topic: "/imu/data"
+  acc_n: 3.9939570888238808e-03
+  gyr_n: 1.5636343949698187e-03
+  acc_w: 6.4356659353532566e-05
+  gyr_w: 3.5640318696367613e-05
+  gravity: 9.80511
+
+lidar_odometry:
+  lidar_topic: "/velodyne_points"
+  ds_rate: 1
+  line_num: 32
+  edgeThreshold: 1.0
+  surfThreshold: 0.1
+  max_num_iter: 12
+  scan_match_cnt: 1
+  if_to_deskew: false
+
+visualization:
+  GTinLocal: true
+
+initialization:
+  Euler_r: 0.0
+  Euler_p: 0.0
+  Euler_y: -155
+  gt_path: /home/ray/Ray_ws/RTTLIO_ws/src/RTTLIO/dataset/gt.csv
+
+Estimator:
+  enable_batch_fusion: true
+  sms_fusion_level: 0
+  search_range: 6
+  max_num_iter: 100
+  slide_window_width: 5
+  local_map_width: 50
+  edgeDSRange: 0.4
+  surfDSRange: 0.9
+  lidar_const: 7.5
+  surf_dist_thres: 0.18
+  kd_max_radius: 1.5
+
+  loop_closure_on: false
+  lc_search_radius: 25
+  lc_map_width: 25
+  lc_icp_thres: 0.2
+  lc_time_thres: 30.0
+
+  save_pcd: true
+  mapping_interval: 3
+
+  ql2b_w: 1
+  ql2b_x: 0
+  ql2b_y: 0
+  ql2b_z: 0
+
+  tl2b_x: 0
+  tl2b_y: 0
+  tl2b_z: 0.28
+
+feature_selection:
+  feature_res_num: 100
+  rand_set_num: 300
+  batch_feature_res_num: 25
+  batch_rand_set_num: 400
+  random_select: true

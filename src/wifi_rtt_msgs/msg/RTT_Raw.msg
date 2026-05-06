@@ -1,0 +1,11 @@
+float64 unixtime
+float64 timestamp
+float64 ap_index
+float64 ap_pos_x
+float64 ap_pos_y
+float64 ap_pos_z
+float64 range
+float64 raw_range
+float64 gt_pos_x
+float64 gt_pos_y
+float64 gt_pos_z
